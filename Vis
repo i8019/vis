@@ -1,13 +1,17 @@
 local Pets = require(game:GetService("ReplicatedStorage").Library.Directory.Pets)
 
 local fromPet = "Cat"
-    local toPet = "Huge Cat"
-    
-    if Pets[fromPet] and Pets[toPet] then
-        for i, v in pairs(Pets[fromPet]) do
-            Pets[fromPet][i] = nil
-        end
-        for i, v in pairs(Pets[toPet]) do
-            Pets[fromPet][i] = v
-        end
-    end
+local toPet = "Titanic Pumpkin Cat"
+
+function FromPet1()
+    for i, v in pairs(Pets[fromPet] or {}) do
+        Pets[fromPet][i] = nil
+   end
+end
+function ToPet2()
+    for i, v in pairs(Pets[toPet] or {}) do
+        Pets[fromPet][i] = v
+  end
+end
+FromPet1()
+ToPet2()
